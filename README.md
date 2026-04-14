@@ -63,3 +63,57 @@ SuggestBot/
 ├── health_Code.py                 # LLaMA-based SQL query generator
 ├── new_chatboat3.py             # Gemini-based chatbot with memory
 └── README.md
+
+--- 
+
+
+---
+
+## 🗄️ Database Schema
+
+### Table: `Treatment`
+
+| Column   | Type  | Description                  |
+|----------|------|------------------------------|
+| Disease  | TEXT | Name of the disease          |
+| treat    | TEXT | Corresponding treatment info |
+
+---
+
+##  Installation & Setup
+
+###  Clone the Repository
+```bash
+git clone https://github.com/riteshpandey2024-cyber/SuggestBot.git
+cd SuggestBot
+```
+
+### Install Dependencies
+ 
+```bash
+pip install -r requirements.txt
+```
+ 
+## Setup Database
+ 
+- Update the database path in code:
+ 
+```python
+db_path = "path_to_your_database.db"
+```
+ 
+##  Setup API Keys
+ 
+- Replace Gemini API key in:
+ 
+```python
+genai.configure(api_key="YOUR_API_KEY")
+```
+ 
+##  Run the Application
+ 
+```bash
+streamlit run new_chatboat3.py
+```
+ 
+ 
