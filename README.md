@@ -33,36 +33,39 @@ SuggestBot is an intelligent chatbot system that converts user queries into SQL 
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
+ 
+```
 SuggestBot/
-│
+|
 ├── Bot-3.0/
-│   │
-│   ├── app/
-│   │   ├── main.py                # Entry point (Streamlit app - Gemini chatbot)
-│   │   ├── llama_engine.py        # LLaMA-based SQL query generator
-│   │   ├── db_utils.py            # Database connection & query functions
-│   │   ├── chat_history.py        # Chat history management (SQLite)
-│   │   ├── disease_matcher.py     # Fuzzy matching & disease extraction
-│   │   ├── config.py              # API keys & configuration
-│   │
-│   ├── database/
-│   │   ├── ritesh.db              # SQLite database
-│   │
-│   ├── models/
-│   │   ├── prompts.py             # Prompt templates (LangChain)
-│   │
-│   ├── utils/
-│   │   ├── helpers.py             # Common helper functions
-│   │
-│   ├── requirements.txt           # Dependencies
-│   ├── README.md                  # Project documentation
-│   ├── .gitignore
-│   └── run.sh / run.bat           # Run script (optional)
-│
+|   |
+|   ├── app/
+|   |   ├── main.py                # Entry point (Streamlit app - Gemini chatbot)
+|   |   ├── llama_engine.py        # LLaMA-based SQL query generator
+|   |   ├── db_utils.py            # Database connection & query functions
+|   |   ├── chat_history.py        # Chat history management (SQLite)
+|   |   ├── disease_matcher.py     # Fuzzy matching & disease extraction
+|   |   └── config.py              # API keys & configuration
+|   |
+|   ├── database/
+|   |   └── ritesh.db              # SQLite database
+|   |
+|   ├── models/
+|   |   └── prompts.py             # Prompt templates (LangChain)
+|   |
+|   ├── utils/
+|   |   └── helpers.py             # Common helper functions
+|   |
+|   ├── requirements.txt           # Dependencies
+|   ├── README.md                  # Project documentation
+|   ├── .gitignore
+|   └── run.sh / run.bat           # Run script (optional)
+|
 ├── health_Code.py                 # LLaMA-based SQL query generator
-├── new_chatboat3.py             # Gemini-based chatbot with memory
+├── new_chatboat3.py               # Gemini-based chatbot with memory
 └── README.md
+```
 
 --- 
 
@@ -116,4 +119,4 @@ genai.configure(api_key="YOUR_API_KEY")
 streamlit run new_chatboat3.py
 ```
  
- 
+
