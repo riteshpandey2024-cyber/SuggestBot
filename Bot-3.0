@@ -51,7 +51,7 @@ def get_conversational_chain():
     """
 
     model = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",  # ✅ Free tier model
+        model="gemini-1.5-flash",  #  Free tier model
         temperature=0.3,
         google_api_key=GOOGLE_API_KEY
     )
@@ -68,7 +68,7 @@ def user_input(user_question):
     new_db = FAISS.load_local(
         "faiss_index",
         embeddings,
-        allow_dangerous_deserialization=True  # ✅ Safe if file is created by you
+        allow_dangerous_deserialization=True  #  Safe if file is created by you
     )
     docs = new_db.similarity_search(user_question)
 
@@ -87,7 +87,7 @@ def main():
         user_input(user_question)
 
     with st.sidebar:
-        st.title("📚 Menu")
+        st.title(" Menu")
         pdf_docs = st.file_uploader("Upload PDF(s)", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
