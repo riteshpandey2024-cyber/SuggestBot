@@ -224,6 +224,47 @@ st.markdown("""
         color: #2D1C10 !important;
     }
 
+    /* === Custom User Chat Bubble (Vibrant Warm Orange matching Switch User) === */
+    .user-chat-bubble {
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        background-color: #EF7D1A !important;
+        border: 1px solid #DF7010 !important;
+        border-radius: 18px !important;
+        padding: 0.95rem 1.4rem !important;
+        margin: 1rem 0 !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 6px 22px rgba(239, 125, 26, 0.35) !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+
+    .user-chat-avatar {
+        font-size: 1.25rem !important;
+        background: rgba(255, 255, 255, 0.22) !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        border-radius: 50% !important;
+        width: 38px !important;
+        height: 38px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        color: #FFFFFF !important;
+    }
+
+    .user-chat-text {
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.01em !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     /* Headings inside Chat Messages (e.g. 🏥 Treatment for Anemia) — Warm Orange */
     div[data-testid="stChatMessage"] h1,
     div[data-testid="stChatMessage"] h2,
@@ -236,32 +277,6 @@ st.markdown("""
         font-family: 'Outfit', sans-serif !important;
         font-weight: 700 !important;
         margin-bottom: 0.5rem !important;
-    }
-
-    /* User / Sent Messages (Right Side - Match Switch User Orange Button) */
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]),
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]),
-    div[data-testid="stChatMessage"]:has(img[alt="👤"]),
-    div[data-testid="stChatMessage"]:has(span:contains("👤")),
-    div[data-testid="stChatMessage"][data-test-script-role="user"] {
-        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
-        background-color: #EF7D1A !important;
-        border: 1px solid #DF7010 !important;
-        border-radius: 18px !important;
-        color: #FFFFFF !important;
-        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.28) !important;
-    }
-
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) *,
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) *,
-    div[data-testid="stChatMessage"][data-test-script-role="user"] *,
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h1,
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h2,
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h3,
-    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h4 {
-        color: #FFFFFF !important;
-        -webkit-text-fill-color: #FFFFFF !important;
-        font-weight: 500 !important;
     }
 
     /* Switch User Primary Orange Button Override */
@@ -386,20 +401,34 @@ st.markdown("""
         color: #EF7D1A !important;
     }
 
-    /* === Streamlit Expanders Fix === */
-    div[data-testid="stExpander"] {
+    /* === Streamlit Expanders Fix (Prevent Any Black Backgrounds) === */
+    div[data-testid="stExpander"],
+    details[data-testid="stExpander"],
+    summary[data-testid="stExpanderSummary"],
+    details[data-testid="stExpander"] summary {
+        background-color: #F8EFE4 !important;
         background: #F8EFE4 !important;
         border: 1px solid #E8DCCF !important;
         border-radius: 14px !important;
         margin-bottom: 0.8rem !important;
     }
 
-    summary[data-testid="stExpanderSummary"],
-    details[data-testid="stExpander"] summary,
+    summary[data-testid="stExpanderSummary"] *,
+    details[data-testid="stExpander"] summary *,
     div[data-testid="stExpander"] summary * {
         color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
         font-weight: 600 !important;
         font-size: 0.92rem !important;
+    }
+
+    summary[data-testid="stExpanderSummary"]:hover,
+    details[data-testid="stExpander"] summary:hover,
+    details[data-testid="stExpander"] summary:hover * {
+        background-color: #FDF1E6 !important;
+        background: #FDF1E6 !important;
+        color: #EF7D1A !important;
+        -webkit-text-fill-color: #EF7D1A !important;
     }
 
     div[data-testid="stExpander"] summary svg {
@@ -1020,10 +1049,16 @@ def main():
 
     # Chat history display
     for msg in st.session_state.messages:
-        role_type = "user" if msg["role"] == "human" else "assistant"
-        avatar = "👤" if msg["role"] == "human" else "🏥"
-        with st.chat_message(role_type, avatar=avatar):
-            st.markdown(msg["content"])
+        if msg["role"] == "human":
+            st.markdown(f"""
+            <div class="user-chat-bubble">
+                <div class="user-chat-avatar">👤</div>
+                <div class="user-chat-text">{msg['content']}</div>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            with st.chat_message("assistant", avatar="🏥"):
+                st.markdown(msg["content"])
 
     # Chat input & pending quick prompt
     prompt = st.chat_input("Ask me about any disease or health topic...")
@@ -1036,8 +1071,12 @@ def main():
         st.session_state.messages.append({"role": "human", "content": prompt})
         save_chat_message(DB_PATH, st.session_state.username, "human", prompt)
 
-        with st.chat_message("user", avatar="👤"):
-            st.markdown(prompt)
+        st.markdown(f"""
+        <div class="user-chat-bubble">
+            <div class="user-chat-avatar">👤</div>
+            <div class="user-chat-text">{prompt}</div>
+        </div>
+        """, unsafe_allow_html=True)
 
         # Generate response
         with st.chat_message("assistant", avatar="🏥"):
