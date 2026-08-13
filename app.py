@@ -210,18 +210,35 @@ st.markdown("""
 
     /* Assistant / Received Messages (Left - Crisp White Card) */
     div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]),
-    div[data-testid="stChatMessage"]:has(img[alt="🏥"]) {
+    div[data-testid="stChatMessage"]:has(img[alt="🏥"]),
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarAssistant"]) {
         background: #FFFFFF !important;
         border: 1px solid #EFE4D6 !important;
         color: #2D1C10 !important;
     }
 
     div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]) .stMarkdown,
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]) p {
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]) p,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarAssistant"]) .stMarkdown,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarAssistant"]) p {
         color: #2D1C10 !important;
     }
 
-    /* User / Sent Messages (Right Side - Vibrant Warm Orange) */
+    /* Headings inside Chat Messages (e.g. 🏥 Treatment for Anemia) — Warm Orange */
+    div[data-testid="stChatMessage"] h1,
+    div[data-testid="stChatMessage"] h2,
+    div[data-testid="stChatMessage"] h3,
+    div[data-testid="stChatMessage"] h4,
+    div[data-testid="stChatMessage"] h5,
+    div[data-testid="stChatMessage"] h6 {
+        color: #EF7D1A !important;
+        -webkit-text-fill-color: #EF7D1A !important;
+        font-family: 'Outfit', sans-serif !important;
+        font-weight: 700 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* User / Sent Messages (Right Side - Match Switch User Orange Button) */
     div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]),
     div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]),
     div[data-testid="stChatMessage"]:has(img[alt="👤"]),
@@ -237,10 +254,26 @@ st.markdown("""
 
     div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) *,
     div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) *,
-    div[data-testid="stChatMessage"][data-test-script-role="user"] * {
+    div[data-testid="stChatMessage"][data-test-script-role="user"] *,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h1,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h2,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h3,
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) h4 {
         color: #FFFFFF !important;
         -webkit-text-fill-color: #FFFFFF !important;
         font-weight: 500 !important;
+    }
+
+    /* Switch User Primary Orange Button Override */
+    button[key="switch_user_btn"],
+    div.stButton > button[key="switch_user_btn"] {
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        background-color: #EF7D1A !important;
+        border: 1px solid #DF7010 !important;
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.35) !important;
     }
 
     /* === Chat Input Bar & BaseWeb Overrides === */
@@ -637,9 +670,9 @@ def init_app():
 
     # Initialize session state
     if "authenticated" not in st.session_state:
-        st.session_state.authenticated = False
-    if "username" not in st.session_state:
-        st.session_state.username = ""
+        st.session_state.authenticated = True
+    if "username" not in st.session_state or not st.session_state.username:
+        st.session_state.username = "User"
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "last_disease" not in st.session_state:
@@ -725,7 +758,7 @@ def render_sidebar():
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button("Switch User", width="stretch"):
+        if st.button("Switch User", type="primary", width="stretch", key="switch_user_btn"):
             st.session_state.authenticated = False
             st.session_state.username = ""
             st.session_state.messages = []
