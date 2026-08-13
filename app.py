@@ -387,6 +387,26 @@ st.markdown("""
         transform: translateY(-2px) !important;
     }
 
+    /* Primary Action Buttons (e.g. Start Session) */
+    button[data-testid="stBaseButton-primary"],
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        color: #FFFFFF !important;
+        border: 1px solid #DF7010 !important;
+        font-weight: 700 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.35) !important;
+    }
+
+    button[data-testid="stBaseButton-primary"]:hover,
+    .stButton > button[kind="primary"]:hover {
+        background: linear-gradient(135deg, #E67E22 0%, #D96B18 100%) !important;
+        color: #FFFFFF !important;
+        border-color: #C0580B !important;
+        box-shadow: 0 8px 25px rgba(239, 125, 26, 0.5) !important;
+        transform: translateY(-2px) !important;
+    }
+
     /* === Disease Grid Chips === */
     .disease-grid {
         display: grid;
@@ -626,8 +646,10 @@ def init_app():
 
 def render_auth_slide():
     """Render the ultra-modern login / onboarding landing slide."""
-    st.markdown("""
-    <div class="auth-wrapper">
+    st.markdown("<div style='height: 4vh;'></div>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1, 2.2, 1])
+    with col2:
+        st.markdown("""
         <div class="auth-card">
             <div class="auth-logo">🏥</div>
             <div class="auth-badge">✨ AI-POWERED HEALTH ENGINE</div>
@@ -636,12 +658,9 @@ def render_auth_slide():
                 Enter your Username to start your personalized AI health consultation and session history.
             </p>
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.markdown("<div style='margin-bottom: 0.6rem; color: #cbd5e1; font-weight: 600; text-align: center;'>Enter Username:</div>", unsafe_allow_html=True)
+        st.markdown("<div style='margin-bottom: 0.5rem; color: #362518; font-weight: 600; text-align: center; font-size: 0.95rem;'>Enter Username to Begin Session:</div>", unsafe_allow_html=True)
         name_input = st.text_input(
             "Username",
             placeholder="e.g. Ritesh Pandey",
@@ -649,29 +668,29 @@ def render_auth_slide():
             label_visibility="collapsed"
         )
 
-        st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+        st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
         btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button("Start Session", width="stretch", key="start_session_btn"):
+            if st.button("🚀 Start Session", type="primary", width="stretch", key="start_session_btn"):
                 user_name = name_input.strip() if name_input.strip() else "User"
                 st.session_state.username = user_name
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, user_name)
                 st.rerun()
         with btn_col2:
-            if st.button("Guest Access", width="stretch", key="guest_session_btn"):
+            if st.button("👤 Guest Access", width="stretch", key="guest_session_btn"):
                 st.session_state.username = "Guest"
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, "Guest")
                 st.rerun()
 
-    st.markdown("""
-    <div class="auth-features-grid">
-        <div class="auth-feature-chip"> Secure SQLite Session</div>
-        <div class="auth-feature-chip"> Powered by Gemini AI</div>
-        <div class="auth-feature-chip"> 60+ Disease Treatments</div>
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown("""
+        <div class="auth-features-grid">
+            <div class="auth-feature-chip">🔒 Secure SQLite Session</div>
+            <div class="auth-feature-chip">⚡ Powered by Gemini AI</div>
+            <div class="auth-feature-chip">💊 60+ Disease Treatments</div>
+        </div>
+        """, unsafe_allow_html=True)
 
 
 def render_sidebar():
