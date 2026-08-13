@@ -380,7 +380,27 @@ st.markdown("""
         -webkit-text-fill-color: #9E8E80 !important;
     }
 
-    /* === BaseWeb Select Popover Menu Fix (Dropdown Overlay) === */
+    /* === BaseWeb Select & Popover Menu Fix (Complete Elimination of Black Backgrounds) === */
+    div[data-testid="stSelectbox"],
+    div[data-testid="stSelectbox"] *,
+    div[data-baseweb="select"],
+    div[data-baseweb="select"] *,
+    div[data-baseweb="select"] > div,
+    div[data-baseweb="icon"] {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
+        border-color: #E6D8C8 !important;
+    }
+
+    div[data-baseweb="select"] svg,
+    div[data-baseweb="icon"] svg {
+        fill: #2D1C10 !important;
+        color: #2D1C10 !important;
+    }
+
+    /* Floating Popover Overlay Menu */
     div[data-baseweb="popover"],
     div[data-baseweb="popover"] *,
     div[data-baseweb="menu"],
@@ -395,10 +415,16 @@ st.markdown("""
         -webkit-text-fill-color: #2D1C10 !important;
     }
 
+    /* Hover & Active Selected Option in Dropdown */
     li[role="option"]:hover,
-    li[role="option"][aria-selected="true"] {
+    li[role="option"]:hover *,
+    li[role="option"][aria-selected="true"],
+    li[role="option"][aria-selected="true"] * {
         background-color: #FDF1E6 !important;
+        background: #FDF1E6 !important;
         color: #EF7D1A !important;
+        -webkit-text-fill-color: #EF7D1A !important;
+        font-weight: 700 !important;
     }
 
     /* === Streamlit Expanders Fix (Prevent Any Black Backgrounds) === */
