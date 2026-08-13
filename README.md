@@ -4,7 +4,7 @@ SuggestBot is an intelligent chatbot system that converts user queries into SQL 
 
 ---
 
-##  Features
+## Features
 
 -  Natural Language to SQL Conversion using LLaMA
 -  AI Chatbot powered by Google Gemini
@@ -17,7 +17,7 @@ SuggestBot is an intelligent chatbot system that converts user queries into SQL 
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 - **Frontend/UI**: Streamlit  
 - **Backend**: Python  
@@ -33,7 +33,7 @@ SuggestBot is an intelligent chatbot system that converts user queries into SQL 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
  
 ```
 SuggestBot/
@@ -76,7 +76,7 @@ SuggestBot/
 
 ### Table: `Treatment`
 
-| Column   | Type  | Description                  |
+| Column   | Type  | Description                 |
 |----------|------|------------------------------|
 | Disease  | TEXT | Name of the disease          |
 | treat    | TEXT | Corresponding treatment info |

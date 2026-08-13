@@ -1,17 +1,19 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_community.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
-import google.generativeai as genai
+from dotenv import load_dotenv
+import os
 
-//Your Gemini API Key
-GOOGLE_API_KEY = "AIzaSyA8-Q1tO01v3RN3OW_##############"
+# Load environment variables
+load_dotenv()
 
-//Configure Gemini
-genai.configure(api_key=GOOGLE_API_KEY)
+# Your Grok API Key (from .env file)
+GROK_API_KEY = os.environ.get("GROK_API_KEY", "")
+XAI_BASE_URL = "https://api.x.ai/v1"
 
 
 def get_pdf_text(pdf_docs):
@@ -31,9 +33,10 @@ def get_text_chunks(text):
 
 
 def get_vector_store(text_chunks):
-    embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001",
-        google_api_key=GOOGLE_API_KEY
+    embeddings = OpenAIEmbeddings(
+        model="v1",
+        openai_api_key=GROK_API_KEY,
+        openai_api_base=XAI_BASE_URL,
     )
     vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
     vector_store.save_local("faiss_index")
@@ -50,10 +53,11 @@ def get_conversational_chain():
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",  #  Free tier model
+    model = ChatOpenAI(
+        model="grok-3-mini-fast",
         temperature=0.3,
-        google_api_key=GOOGLE_API_KEY
+        openai_api_key=GROK_API_KEY,
+        openai_api_base=XAI_BASE_URL,
     )
 
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
@@ -61,14 +65,15 @@ def get_conversational_chain():
 
 
 def user_input(user_question):
-    embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001",
-        google_api_key=GOOGLE_API_KEY
+    embeddings = OpenAIEmbeddings(
+        model="v1",
+        openai_api_key=GROK_API_KEY,
+        openai_api_base=XAI_BASE_URL,
     )
     new_db = FAISS.load_local(
         "faiss_index",
         embeddings,
-        allow_dangerous_deserialization=True  #  Safe if file is created by you
+        allow_dangerous_deserialization=True  # Safe if file is created by you
     )
     docs = new_db.similarity_search(user_question)
 
@@ -79,7 +84,11 @@ def user_input(user_question):
 
 def main():
     st.set_page_config(page_title="Chat PDF")
-    st.header("📄 Chat with PDF using Gemini Flash")
+    st.header("📄 Chat with PDF using Grok AI")
+
+    if not GROK_API_KEY:
+        st.error("⚠️ Please set your GROK_API_KEY in the .env file")
+        st.stop()
 
     user_question = st.text_input("Ask a question about your PDF")
 
