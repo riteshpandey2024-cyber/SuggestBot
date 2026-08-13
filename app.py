@@ -221,19 +221,25 @@ st.markdown("""
         color: #2D1C10 !important;
     }
 
-    /* User / Sent Messages (Right - Vibrant Warm Orange) */
+    /* User / Sent Messages (Right Side - Vibrant Warm Orange) */
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]),
     div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]),
-    div[data-testid="stChatMessage"]:has(img[alt="👤"]) {
+    div[data-testid="stChatMessage"]:has(img[alt="👤"]),
+    div[data-testid="stChatMessage"]:has(span:contains("👤")),
+    div[data-testid="stChatMessage"][data-test-script-role="user"] {
         background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        background-color: #EF7D1A !important;
         border: 1px solid #DF7010 !important;
+        border-radius: 18px !important;
         color: #FFFFFF !important;
         box-shadow: 0 6px 20px rgba(239, 125, 26, 0.28) !important;
     }
 
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) .stMarkdown,
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) p,
-    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) span {
+    div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) *,
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) *,
+    div[data-testid="stChatMessage"][data-test-script-role="user"] * {
         color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
         font-weight: 500 !important;
     }
 
@@ -981,8 +987,9 @@ def main():
 
     # Chat history display
     for msg in st.session_state.messages:
+        role_type = "user" if msg["role"] == "human" else "assistant"
         avatar = "👤" if msg["role"] == "human" else "🏥"
-        with st.chat_message(msg["role"], avatar=avatar):
+        with st.chat_message(role_type, avatar=avatar):
             st.markdown(msg["content"])
 
     # Chat input & pending quick prompt
@@ -996,7 +1003,7 @@ def main():
         st.session_state.messages.append({"role": "human", "content": prompt})
         save_chat_message(DB_PATH, st.session_state.username, "human", prompt)
 
-        with st.chat_message("human", avatar="👤"):
+        with st.chat_message("user", avatar="👤"):
             st.markdown(prompt)
 
         # Generate response

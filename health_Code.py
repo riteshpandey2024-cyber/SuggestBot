@@ -11,7 +11,7 @@ db_path = "ritesh.db"
 # Initialize the LLaMA model
 llm = OllamaLLM(model="llama2")
 
-# ✅ Updated Prompt Template with single quotes for strings
+# Updated Prompt Template with single quotes for strings
 prompt_template = PromptTemplate(
     input_variables=["question"],
     template="""
@@ -61,11 +61,11 @@ def test_connection(db):
         result = cur.fetchone()
         conn.close()
         if result:
-            return "✅ Connected to database and Treatment table exists."
+            return " Connected to database and Treatment table exists."
         else:
-            return "⚠️ Connected to database, but Treatment table does NOT exist."
+            return " Connected to database, but Treatment table does NOT exist."
     except Exception as e:
-        return f"❌ Connection failed: {e}"
+        return f" Connection failed: {e}"
 
 # Function to preview data
 def show_table_preview(db):
@@ -83,7 +83,7 @@ st.header("Ask LLaMA to Query the Treatment Database")
 
 # Sidebar: DB info
 st.sidebar.header("Database Status")
-st.sidebar.write(f"📁 DB Path: `{os.path.abspath(db_path)}`")
+st.sidebar.write(f" DB Path: `{os.path.abspath(db_path)}`")
 
 # Show DB connection status
 status = test_connection(db_path)
