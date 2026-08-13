@@ -368,43 +368,39 @@ st.markdown("""
         color: #2D1C10 !important;
     }
 
-    /* === Buttons Styling === */
-    .stButton > button {
+    /* === Buttons Styling (Clean Cream Default -> Bright Orange on Cursor Hover/Click) === */
+    .stButton > button,
+    button[data-testid="stBaseButton-secondary"],
+    button[data-testid="stBaseButton-primary"] {
         background: linear-gradient(135deg, #FFFFFF 0%, #F5E9DB 100%) !important;
         border: 1px solid #E6D8C8 !important;
         color: #2D1C10 !important;
         border-radius: 12px !important;
         font-weight: 600 !important;
-        transition: all 0.3s ease !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         box-shadow: 0 2px 6px rgba(54, 37, 24, 0.05) !important;
     }
 
-    .stButton > button:hover {
+    .stButton > button:hover,
+    .stButton > button:focus,
+    .stButton > button:active,
+    button[data-testid="stBaseButton-secondary"]:hover,
+    button[data-testid="stBaseButton-primary"]:hover {
         background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
         color: #FFFFFF !important;
         border-color: #DF7010 !important;
-        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.35) !important;
+        box-shadow: 0 8px 25px rgba(239, 125, 26, 0.45) !important;
         transform: translateY(-2px) !important;
     }
 
-    /* Primary Action Buttons (e.g. Start Session) */
-    button[data-testid="stBaseButton-primary"],
-    .stButton > button[kind="primary"] {
-        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
-        color: #FFFFFF !important;
-        border: 1px solid #DF7010 !important;
-        font-weight: 700 !important;
-        border-radius: 12px !important;
-        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.35) !important;
-    }
-
-    button[data-testid="stBaseButton-primary"]:hover,
-    .stButton > button[kind="primary"]:hover {
-        background: linear-gradient(135deg, #E67E22 0%, #D96B18 100%) !important;
-        color: #FFFFFF !important;
-        border-color: #C0580B !important;
-        box-shadow: 0 8px 25px rgba(239, 125, 26, 0.5) !important;
-        transform: translateY(-2px) !important;
+    .auth-input-label {
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.8rem !important;
+        color: #362518 !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        font-size: 0.95rem !important;
+        letter-spacing: 0.01em !important;
     }
 
     /* === Disease Grid Chips === */
@@ -660,7 +656,7 @@ def render_auth_slide():
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("<div style='margin-bottom: 0.5rem; color: #362518; font-weight: 600; text-align: center; font-size: 0.95rem;'>Enter Username to Begin Session:</div>", unsafe_allow_html=True)
+        st.markdown('<div class="auth-input-label">Enter Username to Begin Session:</div>', unsafe_allow_html=True)
         name_input = st.text_input(
             "Username",
             placeholder="e.g. Ritesh Pandey",
@@ -671,7 +667,7 @@ def render_auth_slide():
         st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
         btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button("🚀 Start Session", type="primary", width="stretch", key="start_session_btn"):
+            if st.button("🚀 Start Session", width="stretch", key="start_session_btn"):
                 user_name = name_input.strip() if name_input.strip() else "User"
                 st.session_state.username = user_name
                 st.session_state.authenticated = True
