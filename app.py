@@ -803,14 +803,14 @@ def render_auth_slide():
         st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
         btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button("🚀 Start Session", width="stretch", key="start_session_btn"):
+            if st.button("Start Session", width="stretch", key="start_session_btn"):
                 user_name = name_input.strip() if name_input.strip() else "User"
                 st.session_state.username = user_name
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, user_name)
                 st.rerun()
         with btn_col2:
-            if st.button("👤 Guest Access", width="stretch", key="guest_session_btn"):
+            if st.button("Guest Access", width="stretch", key="guest_session_btn"):
                 st.session_state.username = "Guest"
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, "Guest")
@@ -818,9 +818,9 @@ def render_auth_slide():
 
         st.markdown("""
         <div class="auth-features-grid">
-            <div class="auth-feature-chip">🔒 Secure SQLite Session</div>
-            <div class="auth-feature-chip">⚡ Powered by Gemini AI</div>
-            <div class="auth-feature-chip">💊 60+ Disease Treatments</div>
+            <div class="auth-feature-chip">Secure SQLite Session</div>
+            <div class="auth-feature-chip">Powered by Gemini AI</div>
+            <div class="auth-feature-chip">60+ Disease Treatments</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -844,7 +844,7 @@ def render_sidebar():
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
         # User Profile Expander (Minimizable User Account Section)
-        with st.expander("👤 User Account & Profile", expanded=True):
+        with st.expander("User Account & Profile", expanded=True):
             st.markdown(f"""
             <div class="user-profile-badge">
                 <div class="profile-avatar">👤</div>

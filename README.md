@@ -40,19 +40,31 @@
 
 ---
 
-##  Application Screenshots
+## 📸 Application Screenshots
 
-### 1.  Welcome Onboarding Portal
-> *Glassmorphic onboarding card for user authentication and session initialisation.*
+### 1. 🏥 Welcome Onboarding Portal
+> *Warm Beige & Orange onboarding portal for user authentication and session initialization.*
 ![Welcome Portal](docs/images/welcome_portal.png)
 
-### 2.  Dark Glassmorphism Chat Interface
-> *Conversational interface with typewriter response animation, gradient user bubbles, and glowing assistant cards.*
+### 2. 💬 Warm Beige & Orange Chat Interface
+> *Conversational interface with typewriter response animation, vibrant orange user message bubbles, and crisp white assistant cards.*
 ![Chatbot Interface](docs/images/chatbot_interface.png)
 
-### 3.  Interactive 60-Disease Selector Grid
-> *Dynamic disease search dropdown and 1-touch interactive prompt chips.*
+### 3. 🔍 Interactive 60-Disease Selector Grid
+> *Dynamic disease search dropdown, filterable disease list, and 1-touch interactive prompt chips.*
 ![Disease Browser](docs/images/disease_browser.png)
+
+### 4. 👤 Minimizable User Profile & Session Controls
+> *Collapsible user profile badge, active session indicator, and 1-click user switching.*
+![User Profile Controls](docs/images/user_profile.png)
+
+### 5. 📊 SQLite Database Inspection & CSV Data Export
+> *Live database connection status, disease treatment data table preview, and 1-click CSV download.*
+![Database & Export](docs/images/database_export.png)
+
+### 6. 📱 Responsive Collapsible Slide-Left Workspace
+> *Full-screen chat view with collapsible sidebar toggle arrow and distinct vertical divider line.*
+![Responsive Workspace](docs/images/responsive_workspace.png)
 
 ---
 
