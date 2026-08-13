@@ -40,31 +40,31 @@
 
 ---
 
-## 📸 Application Screenshots
+## 📸 Application Screenshots & User Journey
 
-### 1. 🏥 Welcome Onboarding Portal
-> *Warm Beige & Orange onboarding portal for user authentication and session initialization.*
-![Welcome Portal](docs/images/username.png)
+### 1. 🏥 Slide 1: Welcome Landing Page & Quick Prompts
+> *Initial landing slide showcasing the Ayushveda hero welcome banner, system status indicators, and 1-touch quick start health query cards.*
+![Welcome Landing Page](docs/images/Landing.png)
 
-### 2. 💬 Warm Beige & Orange Chat Interface
-> *Conversational interface with typewriter response animation, vibrant orange user message bubbles, and crisp white assistant cards.*
-![Chatbot Interface](docs/images/ShowingChatSection.png)
+### 2. 👤 Slide 2: Username Onboarding & Session Setup
+> *Onboarding portal slide where users enter their Username to create a personal session profile or choose Guest Access to begin.*
+![Username Onboarding](docs/images/username.png)
 
-### 3. 🔍 Interactive 60-Disease Selector Grid
-> *Dynamic disease search dropdown, filterable disease list, and 1-touch interactive prompt chips.*
-![Disease Browser](docs/images/SelectDiseases.png)
+### 3. 💬 Slide 3: Active Chat Workspace & AI Response Streaming
+> *Conversational interface featuring typewriter response streaming, vibrant warm orange user query bubbles, and crisp white medical recommendation cards.*
+![Active Chat Workspace](docs/images/ShowingChatSection.png)
 
-### 4. 👤 Minimizable User Profile & Landing View
-> *Collapsible user profile badge, active session indicator, and 1-click user switching.*
-![User Profile Controls](docs/images/Landing.png)
+### 4. 📊 Slide 4: SQLite Database & Treatment Data Inspection
+> *Interactive database inspection panel displaying live SQLite connection health status and a full data table preview of medical conditions.*
+![Treatment Data Inspection](docs/images/TreatmentData.png)
 
-### 5. 📊 SQLite Database Inspection & Treatment Data
-> *Live database connection status, disease treatment data table preview, and 1-click CSV download.*
-![Database & Export](docs/images/TreatmentData.png)
+### 5. 🔍 Slide 5: Interactive Disease Selector & Search Grid
+> *Filterable disease dropdown selector and 1-touch interactive condition chips that immediately trigger treatment lookups.*
+![Disease Selector Grid](docs/images/SelectDiseases.png)
 
-### 6. 💾 Saved Queries Log & CSV Data Export
-> *Multi-user chat history logged directly into SQLite with 1-click CSV file export for offline medical record keeping.*
-![Saved Queries & Export](docs/images/SaveQueries.png)
+### 6. 💾 Slide 6: Saved Queries Log & 1-Click CSV Export
+> *Multi-user session history log viewer with 1-click CSV file export for offline medical record keeping and account management.*
+![Saved Queries & CSV Export](docs/images/SaveQueries.png)
 
 ---
 
