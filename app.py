@@ -843,23 +843,23 @@ def render_sidebar():
 
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
-        # User Profile Badge
-        st.markdown("#####  User Profile")
-        st.markdown(f"""
-        <div class="user-profile-badge">
-            <div class="profile-avatar">👤</div>
-            <div class="profile-details">
-                <div class="profile-name">{st.session_state.username}</div>
-                <div class="profile-status">● Active Session</div>
+        # User Profile Expander (Minimizable User Account Section)
+        with st.expander("👤 User Account & Profile", expanded=True):
+            st.markdown(f"""
+            <div class="user-profile-badge">
+                <div class="profile-avatar">👤</div>
+                <div class="profile-details">
+                    <div class="profile-name">{st.session_state.username}</div>
+                    <div class="profile-status">● Active Session</div>
+                </div>
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
-        if st.button("Switch User", type="primary", width="stretch", key="switch_user_btn"):
-            st.session_state.authenticated = False
-            st.session_state.username = ""
-            st.session_state.messages = []
-            st.rerun()
+            if st.button("Switch User", type="primary", width="stretch", key="switch_user_btn"):
+                st.session_state.authenticated = False
+                st.session_state.username = ""
+                st.session_state.messages = []
+                st.rerun()
 
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
