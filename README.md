@@ -48,7 +48,7 @@
 
 ### 2. 👤 Slide 2: Username Onboarding & Session Setup
 > *Onboarding portal slide where users enter their Username to create a personal session profile or choose Guest Access to begin.*
-![Username Onboarding](docs/images/username.png)
+![Username Onboarding](docs/images/Username.png)
 
 ### 3. 💬 Slide 3: Active Chat Workspace & AI Response Streaming
 > *Conversational interface featuring typewriter response streaming, vibrant warm orange user query bubbles, and crisp white medical recommendation cards.*
