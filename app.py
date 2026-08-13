@@ -1176,3 +1176,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Vercel top-level export handler
+app = main
+application = main
+handler = main
