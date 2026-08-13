@@ -767,9 +767,9 @@ def init_app():
 
     # Initialize session state
     if "authenticated" not in st.session_state:
-        st.session_state.authenticated = True
-    if "username" not in st.session_state or not st.session_state.username:
-        st.session_state.username = "User"
+        st.session_state.authenticated = False
+    if "username" not in st.session_state:
+        st.session_state.username = ""
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "last_disease" not in st.session_state:
