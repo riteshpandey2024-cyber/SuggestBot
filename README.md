@@ -46,7 +46,7 @@
 ![Welcome Landing Page](docs/images/Landing.png)
 
 ### 2.  Slide 2: Username Onboarding & Session Setup
-![Username Onboarding](docs/images/Username.png)
+![Username Onboarding](docs/images/username.png)
 
 ### 3.  Slide 3: Active Chat Workspace & AI Response Streamin
 ![Active Chat Workspace](docs/images/ShowingChatSection.png)
