@@ -57,10 +57,11 @@ st.markdown("""
         background: transparent !important;
     }
 
-    /* === Sidebar Styling (Soft Warm Cream) === */
+    /* === Sidebar Styling & Distinct Vertical Divider Line === */
     section[data-testid="stSidebar"] {
         background: #F4EAE0 !important;
-        border-right: 1px solid #E6D8C8 !important;
+        border-right: 2.5px solid #D8C7B5 !important;
+        box-shadow: 6px 0 20px rgba(54, 37, 24, 0.07) !important;
     }
 
     section[data-testid="stSidebar"] .stMarkdown p,
@@ -75,6 +76,47 @@ st.markdown("""
         border: 1px solid #E6D8C8 !important;
         color: #2D1C10 !important;
         border-radius: 10px !important;
+    }
+
+    /* === Sidebar Slide Left / Reverse Expand Toggle Button === */
+    button[data-testid="stSidebarCollapseButton"],
+    button[data-testid="baseButton-header"],
+    button[aria-label*="sidebar"],
+    div[data-testid="stSidebarNav"] button,
+    [data-testid="stHeader"] button {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        border: 1.5px solid #DFCFBD !important;
+        border-radius: 50% !important;
+        color: #EF7D1A !important;
+        width: 38px !important;
+        height: 38px !important;
+        box-shadow: 0 4px 12px rgba(54, 37, 24, 0.12) !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    button[data-testid="stSidebarCollapseButton"]:hover,
+    button[aria-label*="sidebar"]:hover,
+    [data-testid="stHeader"] button:hover {
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        border-color: #DF7010 !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.4) !important;
+        transform: scale(1.1) !important;
+    }
+
+    button[data-testid="stSidebarCollapseButton"] svg,
+    button[aria-label*="sidebar"] svg,
+    [data-testid="stHeader"] button svg {
+        fill: #EF7D1A !important;
+        color: #EF7D1A !important;
+    }
+
+    button[data-testid="stSidebarCollapseButton"]:hover svg,
+    button[aria-label*="sidebar"]:hover svg,
+    [data-testid="stHeader"] button:hover svg {
+        fill: #FFFFFF !important;
+        color: #FFFFFF !important;
     }
 
     /* === Main Text & Headings Override === */
