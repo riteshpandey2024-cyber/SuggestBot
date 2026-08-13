@@ -40,30 +40,24 @@
 
 ---
 
-## 📸 Application Screenshots & User Journey
+##  Application Screenshots & User Journey
 
-### 1. 🏥 Slide 1: Welcome Landing Page & Quick Prompts
-> *Initial landing slide showcasing the Ayushveda hero welcome banner, system status indicators, and 1-touch quick start health query cards.*
+### 1.  Slide 1: Welcome Landing Page & Quick Prompts
 ![Welcome Landing Page](docs/images/Landing.png)
 
-### 2. 👤 Slide 2: Username Onboarding & Session Setup
-> *Onboarding portal slide where users enter their Username to create a personal session profile or choose Guest Access to begin.*
+### 2.  Slide 2: Username Onboarding & Session Setup
 ![Username Onboarding](docs/images/Username.png)
 
-### 3. 💬 Slide 3: Active Chat Workspace & AI Response Streaming
-> *Conversational interface featuring typewriter response streaming, vibrant warm orange user query bubbles, and crisp white medical recommendation cards.*
+### 3.  Slide 3: Active Chat Workspace & AI Response Streamin
 ![Active Chat Workspace](docs/images/ShowingChatSection.png)
 
-### 4. 📊 Slide 4: SQLite Database & Treatment Data Inspection
-> *Interactive database inspection panel displaying live SQLite connection health status and a full data table preview of medical conditions.*
+### 4.  Slide 4: SQLite Database & Treatment Data Inspection
 ![Treatment Data Inspection](docs/images/TreatmentData.png)
 
-### 5. 🔍 Slide 5: Interactive Disease Selector & Search Grid
-> *Filterable disease dropdown selector and 1-touch interactive condition chips that immediately trigger treatment lookups.*
+### 5.  Slide 5: Interactive Disease Selector & Search Grid
 ![Disease Selector Grid](docs/images/SelectDiseases.png)
 
-### 6. 💾 Slide 6: Saved Queries Log & 1-Click CSV Export
-> *Multi-user session history log viewer with 1-click CSV file export for offline medical record keeping and account management.*
+### 6.  Slide 6: Saved Queries Log & 1-Click CSV Export
 ![Saved Queries & CSV Export](docs/images/SaveQueries.png)
 
 ---
