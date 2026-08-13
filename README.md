@@ -42,13 +42,13 @@
 
 ##  Application Screenshots & User Journey
 
-### 1.  Slide 1: Welcome Landing Page & Quick Prompts
+### 1.  Slide 1: Welcome Landing Page
 ![Welcome Landing Page](docs/images/Landing.png)
 
-### 2.  Slide 2: Username Onboarding & Session Setup
+### 2.  Slide 2: Username Session Setup
 ![Username Onboarding](docs/images/username.png)
 
-### 3.  Slide 3: Active Chat Workspace & AI Response Streamin
+### 3.  Slide 3: Active Chat Workspace 
 ![Active Chat Workspace](docs/images/ShowingChatSection.png)
 
 ### 4.  Slide 4: SQLite Database & Treatment Data Inspection
@@ -57,7 +57,7 @@
 ### 5.  Slide 5: Interactive Disease Selector & Search Grid
 ![Disease Selector Grid](docs/images/SelectDiseases.png)
 
-### 6.  Slide 6: Saved Queries Log & 1-Click CSV Export
+### 6.  Slide 6: Saved Queries Log & 1-Click CSV Export 
 ![Saved Queries & CSV Export](docs/images/SaveQueries.png)
 
 ---
