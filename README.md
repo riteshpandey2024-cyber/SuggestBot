@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏥 Ayushveda (SuggestBot)
+# Ayushveda (SuggestBot)
 ### *AI-Powered Disease Treatment Assistant & Health Companion*
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -15,48 +15,48 @@
 
 </div>
 
-## 📌 Table of Contents
-- [✨ Key Features](#-key-features)
-- [🖼️ Application Screenshots](#️-application-screenshots)
-- [🏗️ System Architecture](#️-system-architecture)
-- [📁 Project Structure](#-project-structure)
-- [🗄️ Database Schema](#️-database-schema)
-- [🚀 Quick Start & Installation](#-quick-start--installation)
-- [💡 How to Use](#-how-to-use)
-- [🛡️ Security & Git Best Practices](#️-security--git-best-practices)
-- [⚠️ Medical Disclaimer](#️-medical-disclaimer)
+##  Table of Contents
+- [ Key Features](#-key-features)
+- [ Application Screenshots](#️-application-screenshots)
+- [ System Architecture](#️-system-architecture)
+- [ Project Structure](#-project-structure)
+- [ Database Schema](#️-database-schema)
+- [ Quick Start & Installation](#-quick-start--installation)
+- [ How to Use](#-how-to-use)
+- [ Security & Git Best Practices](#️-security--git-best-practices)
+- [ Medical Disclaimer](#️-medical-disclaimer)
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-- **⚡ Google Gemini AI Integration**: Powered by Google's latest Generative AI models (`gemini-flash-latest`, `gemini-3.6-flash`) with automatic candidate fallback handling.
-- **💊 60+ Medical Conditions Pre-Seeded**: SQLite database pre-loaded with evidence-based treatment guidelines across 9 major medical categories (Neurological, Respiratory, GI, Endocrine, Cardiac, Renal, Musculoskeletal, Dermatology, Ophthalmology).
-- **🎯 RapidFuzz Fuzzy Matching**: Intelligent disease extraction pipeline that handles typos, informal phrasing, and contextual disease detection from natural text.
-- **🎨 Premium Dark Glassmorphism UI**: Custom CSS design featuring glowing neon accents, vibrant gradient chat bubbles, custom scrollbars, and high-visibility text styling.
-- **🔍 Interactive Disease Selector**: Autocomplete dropdown menu and 1-touch clickable disease chips that immediately trigger treatment queries in real-time.
-- **📜 Session Persistence & CSV Export**: Multi-user chat history logged directly into SQLite with 1-click CSV file export for offline medical record keeping.
-- **👤 Flexible Onboarding & User Switching**: User profile badges, instant guest mode, and effortless user profile switching.
+- ** Google Gemini AI Integration**: Powered by Google's latest Generative AI models (`gemini-flash-latest`, `gemini-3.6-flash`) with automatic candidate fallback handling.
+- ** 60+ Medical Conditions Pre-Seeded**: SQLite database pre-loaded with evidence-based treatment guidelines across 9 major medical categories (Neurological, Respiratory, GI, Endocrine, Cardiac, Renal, Musculoskeletal, Dermatology, Ophthalmology).
+- ** RapidFuzz Fuzzy Matching**: Intelligent disease extraction pipeline that handles typos, informal phrasing, and contextual disease detection from natural text.
+- ** Premium Dark Glassmorphism UI**: Custom CSS design featuring glowing neon accents, vibrant gradient chat bubbles, custom scrollbars, and high-visibility text styling.
+- ** Interactive Disease Selector**: Autocomplete dropdown menu and 1-touch clickable disease chips that immediately trigger treatment queries in real time.
+- ** Session Persistence & CSV Export**: Multi-user chat history logged directly into SQLite with 1-click CSV file export for offline medical record keeping.
+- ** Flexible Onboarding & User Switching**: User profile badges, instant guest mode, and effortless user profile switching.
 
 ---
 
-## 🖼️ Application Screenshots
+##  Application Screenshots
 
-### 1. 🔒 Welcome Onboarding Portal
-> *Glassmorphic onboarding card for user authentication and session initialization.*
+### 1.  Welcome Onboarding Portal
+> *Glassmorphic onboarding card for user authentication and session initialisation.*
 ![Welcome Portal](docs/images/welcome_portal.png)
 
-### 2. 💬 Dark Glassmorphism Chat Interface
+### 2.  Dark Glassmorphism Chat Interface
 > *Conversational interface with typewriter response animation, gradient user bubbles, and glowing assistant cards.*
 ![Chatbot Interface](docs/images/chatbot_interface.png)
 
-### 3. 🔍 Interactive 60-Disease Selector Grid
+### 3.  Interactive 60-Disease Selector Grid
 > *Dynamic disease search dropdown and 1-touch interactive prompt chips.*
 ![Disease Browser](docs/images/disease_browser.png)
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```text
                                ┌─────────────────────────┐
@@ -86,7 +86,7 @@
                                             ▼
                              ┌─────────────────────────────┐
                              │   Google Gemini AI Engine   │
-                             │  (Synthesize Response)      │
+                             │  (Synthesise Response)      │
                              └──────────────┬──────────────┘
                                             │
                                             ▼
@@ -98,7 +98,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 SuggestBot/
@@ -126,7 +126,7 @@ SuggestBot/
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 The application uses an **SQLite3** database (`suggestbot.db`) featuring two main tables:
 
@@ -147,7 +147,7 @@ The application uses an **SQLite3** database (`suggestbot.db`) featuring two mai
 
 ---
 
-## 🚀 Quick Start & Installation
+##  Quick Start & Installation
 
 ### Prerequisites
 - **Python 3.10+** installed on your machine.
@@ -175,7 +175,7 @@ GEMINI_API_KEY=AIzaSyYourActualGeminiApiKeyHere
 DB_PATH=suggestbot.db
 ```
 
-### 4. Initialize & Seed Database (60 Diseases)
+### 4. Initialise & Seed Database (60 Diseases)
 Run `setup_db.py` once to build `suggestbot.db` and populate 60 diseases:
 ```bash
 python3 setup_db.py
@@ -190,7 +190,7 @@ Open your browser and navigate to: `http://localhost:8501`
 
 ---
 
-## 💡 How to Use
+## How to Use
 
 1. **Start a Session**:
    - Enter your Username (e.g. `Ritesh Pandey`) on the Welcome Portal and click **`🚀 Start Session`** (or click **`👤 Guest Access`**).
@@ -201,20 +201,20 @@ Open your browser and navigate to: `http://localhost:8501`
 
 3. **Interactive Disease Selector**:
    - Expand **`🔍 Browse & Select Diseases`** in the left sidebar.
-   - Pick any disease from the dropdown or click any disease button (`🏷️ Diabetes`, `🏷️ COVID-19`, `🏷️ Migraine`) to trigger instant queries.
+   - Pick any disease from the dropdown or click any disease button (` Diabetes`, ` COVID-19`, ` Migraine`) to trigger instant queries.
 
 4. **Export Chat History**:
-   - Expand **`📜 Saved Queries & Export`** in the sidebar and click **`📥 Download History (CSV)`** to download your session record.
+   - Expand **` Saved Queries & Export`** in the sidebar and click **` Download History (CSV)`** to download your session record.
 
 ---
 
-## 🛡️ Security & Git Best Practices
+##  Security & Git Best Practices
 
 To ensure private API keys and local databases are never leaked to public repositories, this project enforces strict `.gitignore` rules:
 
 ```text
 # Staging & Committing Code Changes safely
-git add .
+git add.
 git commit -m "Describe your changes here"
 git push
 ```
