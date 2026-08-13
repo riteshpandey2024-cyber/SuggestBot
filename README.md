@@ -44,27 +44,27 @@
 
 ### 1. 🏥 Welcome Onboarding Portal
 > *Warm Beige & Orange onboarding portal for user authentication and session initialization.*
-![Welcome Portal](docs/images/welcome_portal.png)
+![Welcome Portal](docs/images/username.png)
 
 ### 2. 💬 Warm Beige & Orange Chat Interface
 > *Conversational interface with typewriter response animation, vibrant orange user message bubbles, and crisp white assistant cards.*
-![Chatbot Interface](docs/images/chatbot_interface.png)
+![Chatbot Interface](docs/images/ShowingChatSection.png)
 
 ### 3. 🔍 Interactive 60-Disease Selector Grid
 > *Dynamic disease search dropdown, filterable disease list, and 1-touch interactive prompt chips.*
-![Disease Browser](docs/images/disease_browser.png)
+![Disease Browser](docs/images/SelectDiseases.png)
 
-### 4. 👤 Minimizable User Profile & Session Controls
+### 4. 👤 Minimizable User Profile & Landing View
 > *Collapsible user profile badge, active session indicator, and 1-click user switching.*
-![User Profile Controls](docs/images/user_profile.png)
+![User Profile Controls](docs/images/Landing.png)
 
-### 5. 📊 SQLite Database Inspection & CSV Data Export
+### 5. 📊 SQLite Database Inspection & Treatment Data
 > *Live database connection status, disease treatment data table preview, and 1-click CSV download.*
-![Database & Export](docs/images/database_export.png)
+![Database & Export](docs/images/TreatmentData.png)
 
-### 6. 📱 Responsive Collapsible Slide-Left Workspace
-> *Full-screen chat view with collapsible sidebar toggle arrow and distinct vertical divider line.*
-![Responsive Workspace](docs/images/responsive_workspace.png)
+### 6. 💾 Saved Queries Log & CSV Data Export
+> *Multi-user chat history logged directly into SQLite with 1-click CSV file export for offline medical record keeping.*
+![Saved Queries & Export](docs/images/SaveQueries.png)
 
 ---
 
