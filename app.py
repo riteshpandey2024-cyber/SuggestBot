@@ -41,15 +41,15 @@ st.markdown("""
     /* === Google Fonts === */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-    /* === Force Dark Glass Canvas === */
+    /* === Warm Beige & Orange Canvas === */
     html, body, .stApp, [data-testid="stAppViewContainer"], section.main {
-        background: #080c18 !important;
+        background: #FAF4EB !important;
         background-image: 
-            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
-            radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
-            radial-gradient(at 50% 30%, rgba(139, 92, 246, 0.12) 0px, transparent 60%) !important;
+            radial-gradient(at 0% 0%, rgba(243, 156, 18, 0.08) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, rgba(230, 126, 34, 0.06) 0px, transparent 50%),
+            radial-gradient(at 50% 30%, rgba(245, 233, 219, 0.5) 0px, transparent 60%) !important;
         background-attachment: fixed !important;
-        color: #f1f5f9 !important;
+        color: #2D1C10 !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
 
@@ -57,54 +57,53 @@ st.markdown("""
         background: transparent !important;
     }
 
-    /* === Sidebar Styling === */
+    /* === Sidebar Styling (Soft Warm Cream) === */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #060913 0%, #0c1424 100%) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+        background: #F4EAE0 !important;
+        border-right: 1px solid #E6D8C8 !important;
     }
 
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #cbd5e1 !important;
+        color: #4A3B2C !important;
         font-size: 0.9rem;
     }
 
     section[data-testid="stSidebar"] input {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(99, 102, 241, 0.3) !important;
-        color: #ffffff !important;
+        background: #FFFFFF !important;
+        border: 1px solid #E6D8C8 !important;
+        color: #2D1C10 !important;
         border-radius: 10px !important;
     }
 
     /* === Main Text & Headings Override === */
     .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown li, .stMarkdown div {
-        color: #e2e8f0 !important;
+        color: #2D1C10 !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        color: #ffffff !important;
+        color: #2D1C10 !important;
         font-family: 'Outfit', sans-serif !important;
     }
 
-    /* === Hero Section === */
+    /* === Hero Section (Warm Beige Card) === */
     .hero-container {
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1), rgba(16, 185, 129, 0.08));
-        border: 1px solid rgba(99, 102, 241, 0.25);
+        background: linear-gradient(135deg, #F5E9DB 0%, #FAF4EB 100%);
+        border: 1px solid #E6D4C2;
         border-radius: 20px;
         padding: 2.2rem 2rem;
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(12px);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 30px rgba(74, 59, 44, 0.06);
     }
 
     .hero-title {
         font-family: 'Outfit', sans-serif;
         font-size: 2.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff, #a78bfa, #818cf8);
+        background: linear-gradient(135deg, #2D1C10, #EF7D1A);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -114,7 +113,7 @@ st.markdown("""
 
     .hero-subtitle {
         font-size: 1.05rem;
-        color: #cbd5e1;
+        color: #635345;
         font-weight: 400;
         line-height: 1.6;
     }
@@ -132,15 +131,15 @@ st.markdown("""
     }
 
     .status-online {
-        background: rgba(16, 185, 129, 0.15);
-        color: #34d399;
-        border: 1px solid rgba(16, 185, 129, 0.3);
+        background: #E8F8F0;
+        color: #27AE60;
+        border: 1px solid #C8E6D5;
     }
 
     .status-offline {
-        background: rgba(244, 63, 94, 0.15);
-        color: #fb7185;
-        border: 1px solid rgba(244, 63, 94, 0.3);
+        background: #FDE8E8;
+        color: #E74C3C;
+        border: 1px solid #F5C6C6;
     }
 
     .status-dot {
@@ -150,8 +149,8 @@ st.markdown("""
         animation: pulse-dot 2s ease-in-out infinite;
     }
 
-    .status-dot.online { background: #34d399; box-shadow: 0 0 10px #34d399; }
-    .status-dot.offline { background: #fb7185; box-shadow: 0 0 10px #fb7185; }
+    .status-dot.online { background: #27AE60; box-shadow: 0 0 10px #27AE60; }
+    .status-dot.offline { background: #E74C3C; box-shadow: 0 0 10px #E74C3C; }
 
     @keyframes pulse-dot {
         0%, 100% { opacity: 1; transform: scale(1); }
@@ -167,25 +166,26 @@ st.markdown("""
     }
 
     .stat-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #FFFFFF;
+        border: 1px solid #EFE4D6;
         border-radius: 12px;
         padding: 1rem 0.5rem;
         text-align: center;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(74, 59, 44, 0.04);
     }
 
     .stat-card:hover {
-        border-color: rgba(99, 102, 241, 0.4);
+        border-color: #EF7D1A;
         transform: translateY(-2px);
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        box-shadow: 0 6px 18px rgba(239, 125, 26, 0.15);
     }
 
     .stat-number {
         font-family: 'Outfit', sans-serif;
         font-size: 1.6rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+        background: linear-gradient(135deg, #EF7D1A, #E67E22);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -193,25 +193,48 @@ st.markdown("""
 
     .stat-label {
         font-size: 0.75rem;
-        color: #94a3b8;
+        color: #786656;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         margin-top: 2px;
     }
 
-    /* === Chat Messages Styling === */
+    /* === Chat Messages Styling (Warm Beige & Orange Theme) === */
     div[data-testid="stChatMessage"] {
-        border-radius: 16px !important;
-        padding: 1.2rem 1.4rem !important;
+        border-radius: 18px !important;
+        padding: 1.1rem 1.4rem !important;
         margin-bottom: 1rem !important;
-        backdrop-filter: blur(12px) !important;
         transition: all 0.3s ease !important;
-        background: rgba(15, 23, 42, 0.85) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 4px 15px rgba(54, 37, 24, 0.04) !important;
     }
 
-    div[data-testid="stChatMessage"]:hover {
-        border-color: rgba(99, 102, 241, 0.3) !important;
+    /* Assistant / Received Messages (Left - Crisp White Card) */
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]),
+    div[data-testid="stChatMessage"]:has(img[alt="🏥"]) {
+        background: #FFFFFF !important;
+        border: 1px solid #EFE4D6 !important;
+        color: #2D1C10 !important;
+    }
+
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]) .stMarkdown,
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 🏥"]) p {
+        color: #2D1C10 !important;
+    }
+
+    /* User / Sent Messages (Right - Vibrant Warm Orange) */
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]),
+    div[data-testid="stChatMessage"]:has(img[alt="👤"]) {
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        border: 1px solid #DF7010 !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.28) !important;
+    }
+
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) .stMarkdown,
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) p,
+    div[data-testid="stChatMessage"]:has(div[aria-label="chat avatar 👤"]) span {
+        color: #FFFFFF !important;
+        font-weight: 500 !important;
     }
 
     /* === Chat Input Bar & BaseWeb Overrides === */
@@ -224,27 +247,45 @@ st.markdown("""
     div[data-testid="stChatInput"] > div,
     div[data-testid="stChatInput"] div[data-baseweb="base-input"],
     div[data-testid="stChatInput"] div[data-baseweb="input"] {
-        background-color: #111827 !important;
-        border-radius: 16px !important;
-        border: 1.5px solid #6366f1 !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        border-radius: 24px !important;
+        border: 1.5px solid #E6D8C8 !important;
+        box-shadow: 0 6px 25px rgba(54, 37, 24, 0.08) !important;
+    }
+
+    div[data-testid="stChatInput"]:focus-within {
+        border-color: #EF7D1A !important;
     }
 
     div[data-testid="stChatInput"] textarea,
     div[data-baseweb="input"] input,
     div[data-baseweb="base-input"] input,
     div[data-baseweb="base-input"] textarea {
-        background-color: #111827 !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
         font-size: 1rem !important;
         font-weight: 500 !important;
     }
 
     div[data-testid="stChatInput"] textarea::placeholder,
     div[data-baseweb="input"] input::placeholder {
-        color: #94a3b8 !important;
-        -webkit-text-fill-color: #94a3b8 !important;
+        color: #9E8E80 !important;
+        -webkit-text-fill-color: #9E8E80 !important;
+    }
+
+    /* === Send Button Accent === */
+    div[data-testid="stChatInput"] button {
+        background-color: #EF7D1A !important;
+        border-radius: 50% !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+
+    div[data-testid="stChatInput"] button svg {
+        fill: #FFFFFF !important;
     }
 
     /* === ALL Text Inputs Fix (stTextInput, Username, Filter, API Key) === */
@@ -254,33 +295,38 @@ st.markdown("""
     div[data-baseweb="input"] *,
     div[data-baseweb="base-input"],
     div[data-baseweb="base-input"] * {
-        background-color: #111827 !important;
-        background: #111827 !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
     }
 
     div[data-testid="stTextInput"] input,
     div[data-baseweb="input"] input,
     div[data-baseweb="base-input"] input {
-        background-color: #111827 !important;
-        background: #111827 !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
-        border: 1.5px solid #6366f1 !important;
-        border-radius: 10px !important;
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
+        border: 1.5px solid #E6D8C8 !important;
+        border-radius: 12px !important;
         font-size: 0.95rem !important;
         font-weight: 500 !important;
+    }
+
+    div[data-testid="stTextInput"] input:focus,
+    div[data-baseweb="input"] input:focus {
+        border-color: #EF7D1A !important;
     }
 
     div[data-testid="stTextInput"] input::placeholder,
     div[data-baseweb="input"] input::placeholder,
     div[data-baseweb="base-input"] input::placeholder {
-        color: #94a3b8 !important;
-        -webkit-text-fill-color: #94a3b8 !important;
+        color: #9E8E80 !important;
+        -webkit-text-fill-color: #9E8E80 !important;
     }
 
-    /* === BaseWeb Select Popover Menu Fix (Dropdown List Overlay) === */
+    /* === BaseWeb Select Popover Menu Fix (Dropdown Overlay) === */
     div[data-baseweb="popover"],
     div[data-baseweb="popover"] *,
     div[data-baseweb="menu"],
@@ -289,54 +335,55 @@ st.markdown("""
     ul[role="listbox"] *,
     li[role="option"],
     li[role="option"] * {
-        background-color: #111827 !important;
-        background: #111827 !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D1C10 !important;
+        -webkit-text-fill-color: #2D1C10 !important;
     }
 
     li[role="option"]:hover,
     li[role="option"][aria-selected="true"] {
-        background-color: rgba(99, 102, 241, 0.3) !important;
-        color: #a78bfa !important;
+        background-color: #FDF1E6 !important;
+        color: #EF7D1A !important;
     }
 
     /* === Streamlit Expanders Fix === */
     div[data-testid="stExpander"] {
-        background: rgba(17, 24, 39, 0.7) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 12px !important;
+        background: #F8EFE4 !important;
+        border: 1px solid #E8DCCF !important;
+        border-radius: 14px !important;
         margin-bottom: 0.8rem !important;
     }
 
     summary[data-testid="stExpanderSummary"],
     details[data-testid="stExpander"] summary,
     div[data-testid="stExpander"] summary * {
-        color: #ffffff !important;
+        color: #2D1C10 !important;
         font-weight: 600 !important;
         font-size: 0.92rem !important;
     }
 
     div[data-testid="stExpander"] summary svg {
-        fill: #ffffff !important;
-        color: #ffffff !important;
+        fill: #2D1C10 !important;
+        color: #2D1C10 !important;
     }
 
     /* === Buttons Styling === */
     .stButton > button {
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)) !important;
-        border: 1px solid rgba(99, 102, 241, 0.4) !important;
-        color: #f1f5f9 !important;
+        background: linear-gradient(135deg, #FFFFFF 0%, #F5E9DB 100%) !important;
+        border: 1px solid #E6D8C8 !important;
+        color: #2D1C10 !important;
         border-radius: 12px !important;
         font-weight: 600 !important;
         transition: all 0.3s ease !important;
+        box-shadow: 0 2px 6px rgba(54, 37, 24, 0.05) !important;
     }
 
     .stButton > button:hover {
-        background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-        color: #ffffff !important;
-        border-color: #8b5cf6 !important;
-        box-shadow: 0 0 25px rgba(99, 102, 241, 0.5) !important;
+        background: linear-gradient(135deg, #F39C12 0%, #EF7D1A 100%) !important;
+        color: #FFFFFF !important;
+        border-color: #DF7010 !important;
+        box-shadow: 0 6px 20px rgba(239, 125, 26, 0.35) !important;
         transform: translateY(-2px) !important;
     }
 
@@ -349,21 +396,21 @@ st.markdown("""
     }
 
     .disease-chip {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #FFFFFF;
+        border: 1px solid #EFE4D6;
         border-radius: 8px;
         padding: 0.5rem 0.8rem;
         text-align: center;
-        color: #cbd5e1;
+        color: #4A3B2C;
         font-size: 0.82rem;
         font-weight: 500;
         transition: all 0.2s ease;
     }
 
     .disease-chip:hover {
-        background: rgba(99, 102, 241, 0.15);
-        border-color: rgba(99, 102, 241, 0.4);
-        color: #a78bfa;
+        background: #FDF1E6;
+        border-color: #EF7D1A;
+        color: #EF7D1A;
     }
 
     /* === Detection Badge === */
@@ -371,48 +418,48 @@ st.markdown("""
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(99, 102, 241, 0.15);
-        border: 1px solid rgba(99, 102, 241, 0.3);
+        background: #FDF1E6;
+        border: 1px solid #FCD3B1;
         border-radius: 100px;
         padding: 6px 14px;
         font-size: 0.84rem;
-        color: #a78bfa;
+        color: #D96B18;
         margin-bottom: 0.8rem;
     }
 
     .detection-badge.fuzzy {
-        background: rgba(245, 158, 11, 0.15);
-        border-color: rgba(245, 158, 11, 0.3);
-        color: #fbbf24;
+        background: #FFFBEB;
+        border-color: #FDE68A;
+        color: #D97706;
     }
 
     .detection-badge.context {
-        background: rgba(16, 185, 129, 0.15);
-        border-color: rgba(16, 185, 129, 0.3);
-        color: #34d399;
+        background: #ECFDF5;
+        border-color: #A7F3D0;
+        color: #059669;
     }
 
     /* === Tip Cards === */
     .tip-card {
-        background: rgba(15, 23, 42, 0.85) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        background: #FFFFFF !important;
+        border: 1px solid #EFE4D6 !important;
         border-radius: 16px !important;
         padding: 1.2rem 1.4rem !important;
         margin-bottom: 1rem !important;
         transition: all 0.3s ease !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+        box-shadow: 0 4px 15px rgba(54, 37, 24, 0.04) !important;
     }
 
     .tip-card:hover {
-        border-color: rgba(99, 102, 241, 0.4) !important;
+        border-color: #EF7D1A !important;
         transform: translateY(-3px) !important;
-        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25) !important;
+        box-shadow: 0 8px 25px rgba(239, 125, 26, 0.18) !important;
     }
 
     .tip-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
-    .tip-title { font-weight: 700; color: #ffffff; font-size: 1.02rem; margin-bottom: 4px; }
-    .tip-desc { color: #cbd5e1; font-size: 0.86rem; line-height: 1.5; }
-    .tip-example { color: #a78bfa; font-size: 0.82rem; font-style: italic; margin-top: 6px; }
+    .tip-title { font-weight: 700; color: #2D1C10; font-size: 1.02rem; margin-bottom: 4px; }
+    .tip-desc { color: #635345; font-size: 0.86rem; line-height: 1.5; }
+    .tip-example { color: #EF7D1A; font-size: 0.82rem; font-style: italic; margin-top: 6px; }
 
     /* === Authentication Landing Slide CSS === */
     .auth-wrapper {
@@ -425,14 +472,13 @@ st.markdown("""
     }
 
     .auth-card {
-        background: rgba(15, 23, 42, 0.85);
-        border: 1px solid rgba(99, 102, 241, 0.35);
+        background: #FFFFFF;
+        border: 1px solid #EFE4D6;
         border-radius: 24px;
         padding: 2.5rem 2rem 1.8rem;
         max-width: 600px;
         width: 100%;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.2);
+        box-shadow: 0 15px 50px rgba(54, 37, 24, 0.08);
         margin: 0 auto;
         text-align: center;
     }
@@ -441,13 +487,13 @@ st.markdown("""
 
     .auth-badge {
         display: inline-block;
-        background: rgba(99, 102, 241, 0.15);
-        border: 1px solid rgba(99, 102, 241, 0.3);
+        background: #FDF1E6;
+        border: 1px solid #FCD3B1;
         border-radius: 100px;
         padding: 6px 18px;
         font-size: 0.8rem;
         font-weight: 700;
-        color: #a78bfa;
+        color: #EF7D1A;
         letter-spacing: 0.08em;
         margin-bottom: 1rem;
     }
@@ -456,7 +502,7 @@ st.markdown("""
         font-family: 'Outfit', sans-serif;
         font-size: 2.6rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff, #a78bfa, #818cf8);
+        background: linear-gradient(135deg, #2D1C10, #EF7D1A);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -464,7 +510,7 @@ st.markdown("""
     }
 
     .auth-subtitle {
-        color: #cbd5e1;
+        color: #635345;
         font-size: 1.02rem;
         line-height: 1.6;
         margin-bottom: 1.2rem;
@@ -479,12 +525,12 @@ st.markdown("""
     }
 
     .auth-feature-chip {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #FFFFFF;
+        border: 1px solid #EFE4D6;
         border-radius: 100px;
         padding: 8px 18px;
         font-size: 0.84rem;
-        color: #94a3b8;
+        color: #786656;
     }
 
     /* === User Profile Sidebar Badge === */
@@ -492,23 +538,25 @@ st.markdown("""
         display: flex;
         align-items: center;
         gap: 12px;
-        background: rgba(15, 23, 42, 0.8);
-        border: 1px solid rgba(99, 102, 241, 0.3);
+        background: #FFFFFF;
+        border: 1px solid #E6D8C8;
         border-radius: 14px;
         padding: 0.9rem 1.1rem;
         margin-bottom: 0.8rem;
+        box-shadow: 0 2px 8px rgba(54, 37, 24, 0.04);
     }
 
     .profile-avatar {
         font-size: 1.4rem;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #F39C12, #EF7D1A);
         width: 40px;
         height: 40px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        box-shadow: 0 4px 12px rgba(239, 125, 26, 0.3);
+        color: #FFFFFF;
     }
 
     .profile-details {
@@ -518,13 +566,13 @@ st.markdown("""
 
     .profile-name {
         font-weight: 700;
-        color: #ffffff;
+        color: #2D1C10;
         font-size: 1rem;
     }
 
     .profile-status {
         font-size: 0.78rem;
-        color: #34d399;
+        color: #27AE60;
         font-weight: 500;
     }
 
@@ -532,7 +580,7 @@ st.markdown("""
     .section-divider {
         border: none;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        background: linear-gradient(90deg, transparent, #E6D8C8, transparent);
         margin: 1.2rem 0;
     }
 
@@ -540,9 +588,9 @@ st.markdown("""
     .footer {
         text-align: center;
         padding: 2rem 0 1rem;
-        color: #64748b;
+        color: #786656;
         font-size: 0.82rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 1px solid #E6D8C8;
         margin-top: 3rem;
     }
 </style>
@@ -604,14 +652,14 @@ def render_auth_slide():
         st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
         btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button("🚀 Start Session", width="stretch", key="start_session_btn"):
+            if st.button("Start Session", width="stretch", key="start_session_btn"):
                 user_name = name_input.strip() if name_input.strip() else "User"
                 st.session_state.username = user_name
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, user_name)
                 st.rerun()
         with btn_col2:
-            if st.button("👤 Guest Access", width="stretch", key="guest_session_btn"):
+            if st.button("Guest Access", width="stretch", key="guest_session_btn"):
                 st.session_state.username = "Guest"
                 st.session_state.authenticated = True
                 st.session_state.messages = load_chat_history(DB_PATH, "Guest")
@@ -619,9 +667,9 @@ def render_auth_slide():
 
     st.markdown("""
     <div class="auth-features-grid">
-        <div class="auth-feature-chip">🔒 Secure SQLite Session</div>
-        <div class="auth-feature-chip">⚡ Powered by Gemini AI</div>
-        <div class="auth-feature-chip">💊 60+ Disease Treatments</div>
+        <div class="auth-feature-chip"> Secure SQLite Session</div>
+        <div class="auth-feature-chip"> Powered by Gemini AI</div>
+        <div class="auth-feature-chip"> 60+ Disease Treatments</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -634,10 +682,10 @@ def render_sidebar():
         <div style="text-align: center; padding: 1rem 0 1.2rem;">
             <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🏥</div>
             <div style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700;
-                        background: linear-gradient(135deg, #a78bfa, #6366f1);
+                        background: linear-gradient(135deg, #2D1C10, #EF7D1A);
                         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
                         background-clip: text;">Ayushveda</div>
-            <div style="font-size: 0.72rem; color: #64748b; letter-spacing: 0.1em; text-transform: uppercase;
+            <div style="font-size: 0.72rem; color: #786656; letter-spacing: 0.1em; text-transform: uppercase;
                         margin-top: 2px;">AI Health Assistant</div>
         </div>
         """, unsafe_allow_html=True)
@@ -645,7 +693,7 @@ def render_sidebar():
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
         # User Profile Badge
-        st.markdown("##### 👤 User Profile")
+        st.markdown("#####  User Profile")
         st.markdown(f"""
         <div class="user-profile-badge">
             <div class="profile-avatar">👤</div>
@@ -656,7 +704,7 @@ def render_sidebar():
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button("🔄 Switch User", width="stretch"):
+        if st.button("Switch User", width="stretch"):
             st.session_state.authenticated = False
             st.session_state.username = ""
             st.session_state.messages = []
@@ -665,7 +713,7 @@ def render_sidebar():
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
         # Database Status
-        st.markdown("##### 🗄️ Database")
+        st.markdown("##### Database")
         db_ok, db_msg = test_connection(DB_PATH)
         if db_ok:
             st.markdown(f"""
@@ -705,7 +753,7 @@ def render_sidebar():
         st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
         # Preview Table
-        with st.expander("📋 Preview Treatment Data"):
+        with st.expander("Preview Treatment Data"):
             preview = get_table_preview(DB_PATH)
             if preview is not None:
                 st.dataframe(preview, width="stretch", hide_index=True)
@@ -713,7 +761,7 @@ def render_sidebar():
                 st.caption("No data available")
 
         # Disease Browser & Interactive Selector
-        with st.expander("🔍 Browse & Select Diseases"):
+        with st.expander("Browse & Select Diseases"):
             diseases = get_all_diseases(DB_PATH)
             if diseases:
                 selected_disease = st.selectbox(
@@ -728,7 +776,7 @@ def render_sidebar():
                         st.session_state.pending_prompt = f"What is the treatment for {selected_disease}?"
                         st.rerun()
 
-                    if st.button(f"💬 Get Treatment for {selected_disease}", width="stretch", key="ask_selected_disease_btn"):
+                    if st.button(f"Get Treatment for {selected_disease}", width="stretch", key="ask_selected_disease_btn"):
                         st.session_state.pending_prompt = f"What is the treatment for {selected_disease}?"
                         st.rerun()
 
@@ -739,7 +787,7 @@ def render_sidebar():
                 cols = st.columns(2)
                 for idx, d in enumerate(filtered[:24]):
                     with cols[idx % 2]:
-                        if st.button(f"🏷️ {d}", key=f"dis_chip_btn_{idx}", width="stretch"):
+                        if st.button(f"{d}", key=f"dis_chip_btn_{idx}", width="stretch"):
                             st.session_state.pending_prompt = f"What is the treatment for {d}?"
                             st.rerun()
 
@@ -749,13 +797,13 @@ def render_sidebar():
                 st.caption("No diseases in database")
 
         # Saved Queries & Export Log
-        with st.expander("📜 Saved Queries & Export"):
+        with st.expander("Saved Queries & Export"):
             chat_df = get_user_chat_dataframe(DB_PATH, st.session_state.username)
             if not chat_df.empty:
                 st.dataframe(chat_df, width="stretch", hide_index=True)
                 csv_data = chat_df.to_csv(index=False).encode('utf-8')
                 st.download_button(
-                    label="📥 Download History (CSV)",
+                    label="Download History (CSV)",
                     data=csv_data,
                     file_name=f"{st.session_state.username}_health_queries.csv",
                     mime="text/csv",
@@ -769,19 +817,20 @@ def render_sidebar():
         # Actions
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🗑️ Clear Chat", width="stretch"):
+            if st.button("Clear Chat", width="stretch"):
+                username = None
                 clear_chat_history(DB_PATH, username)
                 st.session_state.messages = []
-                st.session_state.last_disease = None
+                st.session_state.last_disease = None 
                 st.rerun()
         with col2:
-            if st.button("🔄 Refresh", width="stretch"):
+            if st.button("Refresh", width="stretch"):
                 st.rerun()
 
         # API Key input if not set
         if not GEMINI_API_KEY and not st.session_state.get('ai_initialized'):
             st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
-            st.markdown("##### 🔑 API Configuration")
+            st.markdown("##### API Configuration")
             api_key = st.text_input("Gemini API Key", type="password", placeholder="AIzaSy...")
             if api_key:
                 os.environ["GEMINI_API_KEY"] = api_key.strip()
@@ -789,7 +838,7 @@ def render_sidebar():
                     model = initialize_gemini(api_key.strip())
                     if model:
                         st.session_state.ai_initialized = True
-                        st.success("✅ Gemini API connected!")
+                        st.success("Gemini API connected!")
                         st.rerun()
                     else:
                         st.error("Failed to initialize Gemini API.")
@@ -801,7 +850,7 @@ def render_hero():
     """Render the hero/welcome section."""
     st.markdown("""
     <div class="hero-container">
-        <div class="hero-title">🙏 Namaste! Welcome to Ayushveda</div>
+        <div class="hero-title">Namaste! Welcome to Ayushveda</div>
         <div class="hero-subtitle">
             Your trusted AI assistant for disease treatments and health queries.
             Ask me about any disease — I'll find the best treatment information for you.
@@ -812,13 +861,13 @@ def render_hero():
 
 def render_welcome_tips():
     """Show helpful tips and interactive prompt chips when chat is empty."""
-    st.markdown("<h4 style='color: #ffffff; font-weight: 700; margin-bottom: 1rem;'>💡 Quick Prompts & Examples</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='color: #ffffff; font-weight: 700; margin-bottom: 1rem;'>Quick Prompts & Examples</h4>", unsafe_allow_html=True)
 
     tips = [
-        ("💊", "Treatment Queries", "What is the treatment for diabetes?", "Look up treatment guidelines from medical database"),
-        ("🔬", "Disease Summary", "Tell me about tuberculosis", "Get concise disease summaries powered by Gemini AI"),
-        ("🤒", "Symptom Analysis", "What are the symptoms of malaria?", "Learn about signs and when to seek urgent help"),
-        ("💬", "General Health", "What is a healthy daily diet?", "Ask any general health or wellness question"),
+        ("", "Treatment Queries", "What is the treatment for diabetes?", "Look up treatment guidelines from medical database"),
+        ("", "Disease Summary", "Tell me about tuberculosis", "Get concise disease summaries powered by Gemini AI"),
+        ("", "Symptom Analysis", "What are the symptoms of malaria?", "Learn about signs and when to seek urgent help"),
+        ("", "General Health", "What is a healthy daily diet?", "Ask any general health or wellness question"),
     ]
 
     cols = st.columns(2)
@@ -875,7 +924,7 @@ def process_query(question):
         if treatment:
             response = generate_treatment_response(disease, treatment)
         else:
-            response = f"⚠️ I don't have treatment information for **{disease}** in my database yet."
+            response = f"I don't have treatment information for **{disease}** in my database yet."
 
     elif query_type == "symptom" and disease:
         # Generate disease info via Grok
@@ -956,9 +1005,9 @@ def main():
     # Footer
     st.markdown("""
     <div class="footer">
-        <div>🏥 <strong>Ayushveda</strong> — AI-Powered Disease Treatment Assistant</div>
+        <div><strong>Ayushveda</strong> — AI-Powered Disease Treatment Assistant</div>
         <div style="margin-top: 4px;">Built with Streamlit • Powered by Google Gemini AI • Data stored in SQLite</div>
-        <div style="margin-top: 4px;">⚠️ This is for informational purposes only. Always consult a healthcare professional.</div>
+        <div style="margin-top: 4px;">This is for informational purposes only. Always consult a healthcare professional.</div>
     </div>
     """, unsafe_allow_html=True)
 
