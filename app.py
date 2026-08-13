@@ -24,7 +24,7 @@ from core.ai_engine import (
 )
 
 # === Configuration ===
-DB_PATH = os.environ.get("DB_PATH", "suggestbot.db")
+DB_PATH = os.environ.get("DB_PATH", "ritesh.db")
 GEMINI_API_KEY = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY") or "").strip()
 
 # === Page Config ===

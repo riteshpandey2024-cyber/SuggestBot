@@ -104,7 +104,7 @@
 SuggestBot/
 ├── app.py                   # Main Streamlit web application & Dark Glass UI engine
 ├── setup_db.py              # SQLite database initialization & 60-disease seed script
-├── suggestbot.db            # SQLite database instance (Git-ignored)
+├── ritesh.db            # SQLite database instance (Git-ignored)
 ├── requirements.txt         # Python package dependencies
 ├── .env                     # Local environment file containing API keys (Git-ignored)
 ├── .env.example             # Environment configuration template for public setup
@@ -128,7 +128,7 @@ SuggestBot/
 
 ##  Database Schema
 
-The application uses an **SQLite3** database (`suggestbot.db`) featuring two main tables:
+The application uses an **SQLite3** database (`ritesh.db`) featuring two main tables:
 
 ### 1. `Treatment` Table (Medical Knowledge Base)
 | Column Name | Data Type | Key Type | Description |
@@ -172,11 +172,11 @@ cp .env.example .env
 Edit `.env` and paste your Google Gemini API key:
 ```env
 GEMINI_API_KEY=AIzaSyYourActualGeminiApiKeyHere
-DB_PATH=suggestbot.db
+DB_PATH=ritesh.db
 ```
 
 ### 4. Initialise & Seed Database (60 Diseases)
-Run `setup_db.py` once to build `suggestbot.db` and populate 60 diseases:
+Run `setup_db.py` once to build `ritesh.db` and populate 60 diseases:
 ```bash
 python3 setup_db.py
 ```
@@ -219,7 +219,7 @@ git commit -m "Describe your changes here"
 git push
 ```
 
-*Note: Never commit `.env` or `suggestbot.db` files directly.*
+*Note: Never commit `.env` or `ritesh.db` files directly.*
 
 ---
 

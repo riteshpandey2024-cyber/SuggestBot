@@ -8,7 +8,7 @@ Run this script:
 import sqlite3
 import os
 
-DB_PATH = os.environ.get("DB_PATH", "suggestbot.db")
+DB_PATH = os.environ.get("DB_PATH", "ritesh.db")
 
 SEED_DATA = [
     ("Diabetes", "Manage blood sugar through a balanced diet (low glycemic index foods), regular exercise (150 min/week), and medication such as Metformin or Insulin. Monitor HbA1c levels every 3 months. Maintain healthy weight and reduce stress."),

@@ -13,7 +13,7 @@ genai.configure(api_key="AIzaSyA8-Q1tO01v3RN3OW_#######")  # Replace with your a
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 # === Path to your SQLite DB ===
-db_path = r"C:\\Users\\rajs1\\Downloads\\newdata.db\\ansh.db"
+db_path = "ritesh.db"
 chat_db_path = db_path
 
 # === Database functions ===

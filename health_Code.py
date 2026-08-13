@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # Correct path to your SQLite DB
-db_path = r"C:\Users\rajs1\Downloads\newdata.db\ansh.db"
+db_path = "ritesh.db"
 
 # Initialize the LLaMA model
 llm = OllamaLLM(model="llama2")
